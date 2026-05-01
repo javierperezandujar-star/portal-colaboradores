@@ -1,0 +1,179 @@
+⚡ INICIO RÁPIDO - Portal de Colaboradores (VERSIÓN GOOGLE DRIVE)
+═══════════════════════════════════════════════════════════════════
+
+🎯 OBJETIVO: Sincronizar datos automáticamente en Google Drive
+
+═══════════════════════════════════════════════════════════════════
+
+✅ PASO 1: CONFIGURAR GOOGLE DRIVE API
+───────────────────────────────────────────────────────────────────
+⚠️ ESTO ES IMPORTANTE - NO SALTES ESTE PASO
+
+1. Lee el archivo: GOOGLE_DRIVE_SETUP.md
+2. Crea un proyecto en: https://console.cloud.google.com
+3. Habilita Google Drive API
+4. Obtén tu Client ID y API Key
+5. Edita src/utils.js línea ~20 con tus credenciales:
+
+   apiKey: "TU_API_KEY_AQUI",
+   clientId: "TU_CLIENT_ID.apps.googleusercontent.com",
+
+═══════════════════════════════════════════════════════════════════
+
+✅ PASO 2: INSTALAR DEPENDENCIAS
+───────────────────────────────────────────────────────────────────
+En la terminal, ejecuta:
+
+    npm install
+
+Esto instala: React, Vite, lucide-react, Google APIs
+⏱️ Toma unos 2-3 minutos
+
+
+✅ PASO 3: EJECUTAR EN DESARROLLO
+───────────────────────────────────────────────────────────────────
+En la terminal, ejecuta:
+
+    npm run dev
+
+Verás algo como:
+    VITE v5.0.0  ready in 123 ms
+    Local: http://localhost:3000
+
+Abre http://localhost:3000 en tu navegador
+
+
+✅ PASO 4: CONECTAR CON GOOGLE DRIVE
+───────────────────────────────────────────────────────────────────
+1. Verás pantalla: "Portal de Colaboradores"
+2. Click en: "Conectar con Google Drive"
+3. Se abrirá ventana de Google
+4. Selecciona tu cuenta
+5. Click en "Permitir" (dos veces)
+6. ¡Listo! Estarás conectado
+
+🎉 Desde ahora todos tus datos se guardan en Google Drive automáticamente
+
+
+✅ PASO 5: PROBAR LA APLICACIÓN
+───────────────────────────────────────────────────────────────────
+Credenciales de demo:
+
+👤 Como Colaborador:
+   Usuario: marie
+   Contraseña: marie123
+
+🔐 Como Administrador:
+   Contraseña: admin
+
+   (puedes cambiar estas contraseñas en Admin → Configuración)
+
+
+📁 ESTRUCTURA DE CARPETAS CREADAS
+───────────────────────────────────────────────────────────────────
+portal-colaboradores/
+│
+├── README.md                 ← Documentación principal
+├── GOOGLE_DRIVE_SETUP.md     ← Guía Google Drive (IMPORTANTE)
+├── INICIO_RAPIDO.txt         ← Este archivo
+├── package.json              ← Dependencias
+├── vite.config.js            ← Configuración
+│
+├── public/
+│   └── index.html            ← HTML principal
+│
+└── src/
+    ├── App.jsx               ← Autenticación Google + Dashboard
+    ├── constants.js          ← Datos por defecto
+    ├── utils.js              ← Google Drive API + funciones
+    ├── JobsModule.jsx        ← Trabajos
+    ├── InvoicesModule.jsx    ← Facturas
+    ├── UsersModule.jsx       ← Usuarios
+    └── AdminPanel.jsx        ← Configuración
+
+
+💾 CÓMO FUNCIONA EL ALMACENAMIENTO
+───────────────────────────────────────────────────────────────────
+1. Te conectas con Google Drive
+2. Se crea automáticamente carpeta: "Portal-Colaboradores"
+3. Dentro se crean 4 archivos JSON:
+   - collaborators.json (usuarios)
+   - jobs.json (trabajos)
+   - invoices.json (facturas)
+   - adminConfig.json (configuración)
+4. CADA VEZ QUE HAGAS UN CAMBIO:
+   → Se guarda automáticamente en Google Drive
+   → No necesitas hacer nada manualmente
+   → Los datos se sincronizan en tiempo real
+
+
+✨ VENTAJAS DE ESTA ARQUITECTURA
+───────────────────────────────────────────────────────────────────
+✓ Datos en la nube (Google Drive)
+✓ Sincronización automática
+✓ Accesible desde cualquier dispositivo
+✓ Backup automático
+✓ Sin servidor necesario
+✓ Compartible con otros usuarios
+✓ Interfaz moderna y responsiva
+✓ Totalmente modular y escalable
+
+
+🔧 PRÓXIMOS PASOS
+───────────────────────────────────────────────────────────────────
+1. Lee GOOGLE_DRIVE_SETUP.md para entender la configuración
+2. Prueba crear/editar un trabajo
+3. Abre Google Drive y verifica que se guardó
+4. Lee src/README.md para entender cómo editar el código
+
+
+⚠️ NOTAS IMPORTANTES
+───────────────────────────────────────────────────────────────────
+✓ Si olvidas configurar Google Drive API, NO funcionará
+✓ El Client ID y API Key no son opcionales
+✓ Los datos se guardan AUTOMÁTICAMENTE, no necesitas guardar
+✓ Si cierras el navegador, los datos siguen en Drive
+✓ Puedes usar desde cualquier dispositivo (Desktop, tablet, móvil)
+
+
+🆘 SOLUCIÓN RÁPIDA DE PROBLEMAS
+───────────────────────────────────────────────────────────────────
+❌ "Error: Invalid client ID"
+   → Verifica que copiaste BIEN el Client ID
+   → Asegúrate que http://localhost:3000 está autorizado
+
+❌ "No se conecta con Google"
+   → Recarga la página (Ctrl+R)
+   → Intenta en navegador incógnito
+   → Verifica que habilitaste Google Drive API
+
+❌ "Los datos no se guardan"
+   → Abre consola (F12) y busca errores
+   → Verifica que estás conectado a Google Drive
+   → Recarga la página
+
+❌ "Módulo no encontrado"
+   → Verifica que hiciste npm install correctamente
+   → Cierra npm run dev y ejecuta de nuevo
+
+
+💡 TIPS ÚTILES
+───────────────────────────────────────────────────────────────────
+• F12 = Abre consola del navegador (útil para ver errores)
+• Ctrl+R = Recarga la página (limpia cache)
+• Los datos son automáticos, no hay botón "guardar"
+• Puedes compartir el portal con otros (todos usan el mismo Google Drive)
+• Los datos se guardan cada vez que haces cambios
+
+
+🎉 ¡LISTO PARA USAR!
+
+Sigue estos pasos:
+1. GOOGLE_DRIVE_SETUP.md (configura credenciales)
+2. npm install
+3. npm run dev
+4. Abre http://localhost:3000
+5. Conecta con Google Drive
+6. ¡Usa la aplicación!
+
+═══════════════════════════════════════════════════════════════════
